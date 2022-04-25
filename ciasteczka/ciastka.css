@@ -1,0 +1,18 @@
+body {
+    background-color: brown;
+    color: white;
+}
+
+button {
+    background-color: orange;
+    color: white;
+}
+
+
+
+#accept {
+    text-align: center;
+    border: 3px solid black;
+
+
+}

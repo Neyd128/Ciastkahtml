@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="ciastka.css" />
+    
+</head>
+<body>
+    
+        <div id="accept">
+            <h3>Ciasteczka, po co?</h3>
+            <br>
+            <b>Czy chcesz zakceptować ciasteczka?</b>
+            <br>
+            <button onclick="accept();" id="accept-cookies">Akceptuje</a></button>
+            <button onclick="decline()">Nie Akceptuje</button>
+        </div>
+
+      
+        <script>
+            function accept() {
+                    document.cookie = "cookieAccept=true";
+                    window.location.reload(true);
+                };
+            function getCookie(name) {
+                    const value = `; ${document.cookie}`;
+                    const parts = value.split(`; ${name}=`);
+                    if (parts.length === 2) return parts.pop().split(';').shift();
+                };
+             if (getCookie("cookieAccept") == "true") {
+                    document.getElementById("cookies-message").style.display = "none";
+            };
+            window.onload = getCookie;
+          </script>
+
+</body>
